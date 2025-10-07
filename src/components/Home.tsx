@@ -95,7 +95,7 @@ export function Home({ onNavigate }: HomeProps) {
               प्रकृति सेवा
             </h1>
             <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-saffron-light">
-              My Seva App
+              Prakriti Seva - The Eco Dharmik Platform
             </h2>
             <p className="text-xl md:text-2xl mb-6 text-green-100 font-medium">
               Sacred Waste Management for Divine Spaces
@@ -278,7 +278,7 @@ export function Home({ onNavigate }: HomeProps) {
               </h2>
               <p className="text-xl text-gray-700 mb-8 leading-relaxed">
                 We believe that caring for our environment is a sacred duty enshrined in our ancient 
-                wisdom. Through My Seva App, we help temples and devotees contribute to a cleaner, 
+                wisdom. Through Prakriti Seva - The Eco Dharmik Platform, we help temples and devotees contribute to a cleaner, 
                 greener world while maintaining the sanctity and respect our divine spaces deserve.
               </p>
               

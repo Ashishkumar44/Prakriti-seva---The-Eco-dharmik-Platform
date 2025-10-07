@@ -1,7 +1,7 @@
 
-  # My Seva App
+  # Prakriti Seva - The Eco Dharmik Platform
 
-  This is a code bundle for "My Seva App" — an implementation inspired by a Figma design. The original design reference (for attribution) is available at the Figma file: https://www.figma.com/design/rZMN081pMcTusgZiRXBQdJ/Prakriti-Seva-Website-Design.
+  This repository contains the code for "Prakriti Seva - The Eco Dharmik Platform." It was implemented based on a Figma design; the reference file (for attribution) is: https://www.figma.com/design/rZMN081pMcTusgZiRXBQdJ/Prakriti-Seva-Website-Design.
 
   ## Running the code
 
