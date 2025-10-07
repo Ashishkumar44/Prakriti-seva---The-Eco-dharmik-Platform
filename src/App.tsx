@@ -58,10 +58,10 @@ export default function App() {
             {/* Logo */}
             <div className="flex items-center space-x-3">
               <div className="bg-gradient-to-r from-saffron to-nature-green p-2 rounded-full">
-                <img src={logoUrl} alt="Prakriti Seva" className="h-6 w-6" />
+                <img src={logoUrl} alt="Prakriti Seva App" className="h-6 w-6" />
               </div>
               <div>
-                <h1 className="text-xl font-bold" style={{ color: 'var(--nature-green)' }}>Prakriti Seva</h1>
+                <h1 className="text-xl font-bold" style={{ color: 'var(--nature-green)' }}>Prakriti Seva App</h1>
                 <p className="text-xs" style={{ color: 'var(--saffron)' }}>Sacred Waste Management</p>
               </div>
             </div>

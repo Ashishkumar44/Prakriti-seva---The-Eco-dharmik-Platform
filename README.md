@@ -1,7 +1,7 @@
 
-  # Prakriti Seva Website Design
+  # Prakriti Seva App
 
-  This is a code bundle for Prakriti Seva Website Design. The original project is available at https://www.figma.com/design/rZMN081pMcTusgZiRXBQdJ/Prakriti-Seva-Website-Design.
+  This is a code bundle for the "Prakriti Seva App" — an implementation inspired by a Figma design. The original design reference (for attribution) is available at the Figma file: https://www.figma.com/design/rZMN081pMcTusgZiRXBQdJ/Prakriti-Seva-Website-Design.
 
   ## Running the code
 
