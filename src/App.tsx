@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Home } from './components/Home';
 import { WasteCollection } from './components/WasteCollection';
 import { Awareness } from './components/Awareness';
@@ -46,14 +46,13 @@ export default function App() {
       case 'leaderboard':
         return <Leaderboard />;
       case 'store':
-        // Lazy-load Store to keep bundle small
-        try {
-          // eslint-disable-next-line @typescript-eslint/no-var-requires
-          const Store = require('./components/Store').default;
-          return <Store />;
-        } catch (err) {
-          return <div className="p-6">Loading store...</div>;
-        }
+        // Lazy load the Store component
+        const LazyStore = React.lazy(() => import('./components/Store'));
+        return (
+          <Suspense fallback={<div className="p-6">Loading store...</div>}>
+            <LazyStore />
+          </Suspense>
+        );
       default:
         return <Home onNavigate={setCurrentScreen} />;
     }

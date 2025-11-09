@@ -32,3 +32,34 @@
   - The backend uses a simple file-based JSON database (`server/db.json`) to keep demo product and order data. It's not intended for production.
   - To enable real payments, set `STRIPE_SECRET_KEY` in `server/.env` and configure `SUCCESS_URL`/`CANCEL_URL`.
   
+### Backend developer notes
+
+- Admin endpoints: `GET /api/orders`, `GET /api/orders/:id`, `PATCH /api/orders/:id` are protected by a simple API key. Set `ADMIN_API_KEY` in `server/.env` and send it in the `X-Admin-Key` header when calling those endpoints.
+- Stripe webhook: `/api/webhooks/stripe` verifies Stripe signatures using `STRIPE_WEBHOOK_SECRET`. Use the Stripe CLI to forward test webhooks or set the webhook endpoint in your Stripe dashboard.
+
+Example `.env` (copy `server/.env.example` to `server/.env` and fill values):
+
+```
+PORT=4000
+# STRIPE_SECRET_KEY=sk_test_...
+# STRIPE_WEBHOOK_SECRET=whsec_...
+# SUCCESS_URL=http://localhost:5173/success
+# CANCEL_URL=http://localhost:5173/cancel
+# ADMIN_API_KEY=some-secret-key
+```
+
+Start the backend (dev):
+
+```powershell
+cd server
+npm install
+npm run dev
+```
+
+Test the health endpoint:
+
+```powershell
+curl http://localhost:4000/api/health
+# should return { "ok": true }
+```
+  
