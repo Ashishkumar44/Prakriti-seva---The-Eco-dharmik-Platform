@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import logoUrl from './assets/logo.svg'
 
-type Screen = 'home' | 'waste-collection' | 'awareness' | 'dashboard' | 'leaderboard';
+type Screen = 'home' | 'waste-collection' | 'awareness' | 'dashboard' | 'leaderboard' | 'store';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('home');
@@ -30,6 +30,7 @@ export default function App() {
     { id: 'awareness' as Screen, label: 'Awareness', icon: BookOpen },
     { id: 'dashboard' as Screen, label: 'My Dashboard', icon: User },
     { id: 'leaderboard' as Screen, label: 'Leaderboard', icon: Trophy },
+    { id: 'store' as Screen, label: 'Store', icon: HomeIcon },
   ];
 
   const renderScreen = () => {
@@ -44,6 +45,15 @@ export default function App() {
         return <Dashboard />;
       case 'leaderboard':
         return <Leaderboard />;
+      case 'store':
+        // Lazy-load Store to keep bundle small
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          const Store = require('./components/Store').default;
+          return <Store />;
+        } catch (err) {
+          return <div className="p-6">Loading store...</div>;
+        }
       default:
         return <Home onNavigate={setCurrentScreen} />;
     }
